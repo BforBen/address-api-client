@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>GuildfordBoroughCouncil.Address.Api.Client</id>
+    <version>1.0.0</version>
+    <authors>Ben Cheetham</authors>
+    <owners>Guildford Borough Council</owners>
+    <licenseUrl>https://github.com/GuildfordBC/address-api-client/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/GuildfordBC/address-api-client</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A client for the address-api service.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <dependencies>
+      <dependency id="GuildfordBoroughCouncil.Address" />
+      <dependency id="Microsoft.AspNet.WebApi.Client" />
+      <dependency id="Newtonsoft.Json" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net45" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
