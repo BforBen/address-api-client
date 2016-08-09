@@ -25,6 +25,9 @@ namespace GuildfordBoroughCouncil.Address
 
         private static string FormatForQueryString(string name, IEnumerable<string> data)
         {
+            if (data == null)
+                return null;
+
             data = data.Select(d => WebUtility.UrlEncode(d));
 
             var qs = string.Join("&" + WebUtility.UrlEncode(name) + "[]=", data);
