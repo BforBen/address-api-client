@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>GuildfordBoroughCouncil.Address.Api.Client</id>
-    <version>1.1.0</version>
-    <authors>Ben Cheetham</authors>
-    <owners>Guildford Borough Council</owners>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
     <licenseUrl>https://github.com/GuildfordBC/address-api-client/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/GuildfordBC/address-api-client</projectUrl>
     <iconUrl>https://cdn.guildford.gov.uk/assets/favicon-32x32.png</iconUrl>
