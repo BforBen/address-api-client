@@ -43,7 +43,11 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var response = await client.GetAsync("Lookup/ByPostCode/" + PostCode + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications));
+                var Url = "Lookup/ByPostCode/" + PostCode + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications);
+
+                Serilog.Log.Information("Searching for addresses via {0}", Url);
+
+                var response = await client.GetAsync(Url);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -65,7 +69,11 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var response = await client.GetAsync("Lookup/ByUprn/" + WebUtility.UrlEncode(Uprn.ToString()));
+                var Url = "Lookup/ByUprn/" + WebUtility.UrlEncode(Uprn.ToString());
+
+                Serilog.Log.Information("Searching for addresses via {0}", Url);
+
+                var response = await client.GetAsync(Url);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -106,7 +114,11 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var response = await client.GetAsync("Lookup/OnStreet/" + WebUtility.UrlEncode(Usrn.ToString()) + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications));
+                var Url = "Lookup/OnStreet/" + WebUtility.UrlEncode(Usrn.ToString()) + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications);
+
+                Serilog.Log.Information("Searching for addresses via {0}", Url);
+
+                var response = await client.GetAsync(Url);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -133,7 +145,11 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var response = await client.GetAsync("Lookup/BySomething/?Query=" + WebUtility.UrlEncode(Query) + "&Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications));
+                var Url = "Lookup/BySomething/?Query=" + WebUtility.UrlEncode(Query) + "&Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications[]", Classifications);
+
+                Serilog.Log.Information("Searching for addresses via {0}", Url);
+
+                var response = await client.GetAsync(Url);
 
                 if (response.IsSuccessStatusCode)
                 {
