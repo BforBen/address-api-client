@@ -31,7 +31,7 @@ namespace GuildfordBoroughCouncil.Address
             data = data.Select(d => WebUtility.UrlEncode(d));
 
             var qs = string.Join("&" + WebUtility.UrlEncode(name) + "[]=", data);
-
+            
             return (!string.IsNullOrWhiteSpace(qs) ? "&" + WebUtility.UrlEncode(name) + "[]=" + qs : "");
         }
 
