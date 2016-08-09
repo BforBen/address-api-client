@@ -46,7 +46,7 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var Url = "Lookup/ByPostCode/" + PostCode + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
+                var Url = "2/Lookup/ByPostCode/" + PostCode + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
@@ -72,7 +72,7 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var Url = "Lookup/ByUprn/" + WebUtility.UrlEncode(Uprn.ToString());
+                var Url = "2/Lookup/ByUprn/" + WebUtility.UrlEncode(Uprn.ToString());
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
@@ -117,7 +117,7 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var Url = "Lookup/OnStreet/" + WebUtility.UrlEncode(Usrn.ToString()) + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
+                var Url = "2/Lookup/OnStreet/" + WebUtility.UrlEncode(Usrn.ToString()) + "?Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
@@ -148,7 +148,7 @@ namespace GuildfordBoroughCouncil.Address
         {
             using (var client = GetClient())
             {
-                var Url = "Lookup/BySomething/?Query=" + WebUtility.UrlEncode(Query) + "&Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
+                var Url = "2/Lookup/BySomething/?Query=" + WebUtility.UrlEncode(Query) + "&Scope=" + Scope.ToString() + "&IncludeHistorical=" + IncludeHistorical.ToString() + "&postallyaddressable=" + PostallyAddressable.ToString() + FormatForQueryString("classifications", Classifications);
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
