@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using GuildfordBoroughCouncil.Address.Models;
+using System.Linq;
 using System.Net;
 
 namespace GuildfordBoroughCouncil.Address
@@ -24,9 +25,11 @@ namespace GuildfordBoroughCouncil.Address
 
         private static string FormatForQueryString(string name, IEnumerable<string> data)
         {
-            var qs = string.Join("&" + name + "=", data);
+            data = data.Select(d => WebUtility.UrlEncode(d));
 
-            return (!string.IsNullOrWhiteSpace(qs) ? "&" + qs : "");
+            var qs = string.Join("&" + WebUtility.UrlEncode(name) + "=", data);
+
+            return (!string.IsNullOrWhiteSpace(qs) ? "&" + WebUtility.UrlEncode(name) + "=" + qs : "");
         }
 
         /// <summary>
