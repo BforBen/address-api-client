@@ -53,7 +53,7 @@ namespace GuildfordBoroughCouncil.Address
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
-                var response = await client.GetAsync(Url);
+                var response = client.GetAsync(Url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -79,7 +79,7 @@ namespace GuildfordBoroughCouncil.Address
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
-                var response = await client.GetAsync(Url);
+                var response = client.GetAsync(Url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -124,7 +124,7 @@ namespace GuildfordBoroughCouncil.Address
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
-                var response = await client.GetAsync(Url);
+                var response = client.GetAsync(Url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
