@@ -155,7 +155,8 @@ namespace GuildfordBoroughCouncil.Address
 
                 Serilog.Log.Information("Searching for addresses via {0}", Url);
 
-                var response = await client.GetAsync(Url);
+                // For some reasone this does't always return if awaited
+                var response = client.GetAsync(Url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
